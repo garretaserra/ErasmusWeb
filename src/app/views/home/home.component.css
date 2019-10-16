@@ -1,0 +1,13 @@
+.fill-remaining-space {
+  /*This fills the remaining space, by using flexbox.*/
+  flex: 1 1 auto;
+}
+
+.menu-title{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.search-input{
+  margin-left: 50px;
+}

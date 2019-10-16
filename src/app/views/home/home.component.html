@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Erasmus</span>
+
+    <input mat-input class="search-input" id="search-input" type="search"/>
+    <span class="fill-remaining-space"></span>
+    <div>
+      <mat-divider [vertical]="true"></mat-divider>
+      <a mat-button [routerLink]="'/home'" class="menu-title">
+        <img width="20" height="20" src="../../../assets/img/home_white.png">
+        Home </a>
+      <a mat-button [routerLink]="'/friends'" class="menu-title" color="white"> Friends </a>
+      <a mat-button [routerLink]  ="'/events'" class="menu-title"> Events </a>
+      <a mat-button [routerLink]="'/chat'" class="menu-title"> Chat </a>
+    </div>
+    <span class="fill-remaining-space"></span>
+    <span>Log Off</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
