@@ -13,6 +13,8 @@ import { HomeComponent } from './views/home/home.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatDividerModule} from "@angular/material/divider";
 import {MDCTextField} from '@material/textfield';
+import {MatButtonModule} from "@angular/material/button";
+import {MatListModule} from "@angular/material/list";
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +31,8 @@ import {MDCTextField} from '@material/textfield';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatDividerModule,
+    MatButtonModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
