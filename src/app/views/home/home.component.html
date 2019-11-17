@@ -1,0 +1,118 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="background-primary">
+    <span>Erasmus</span>
+      <form [formGroup]="form" class="search-form">
+        <div>
+            <label class="search-input">
+              <input matInput placeholder="Search...">
+            </label>
+            <button type="submit" class="search-button">
+              <i class="material-icons search-icon">search</i>
+            </button>
+        </div>
+      </form>
+    <span class="fill-remaining-space"></span>
+    <div class="toolbar-container">
+      <div class="toolbar-buttons">
+        <div [routerLink]="'/home'">
+          <div>
+            <img width="20" height="20" src="../../../assets/img/home_white.png">
+          </div>
+          <div class="menu-title white-text">
+            <a>Home</a>
+          </div>
+        </div>
+        <div [routerLink]="'/home'">
+          <div>
+            <img width="20" height="20" src="../../../assets/img/home_white.png">
+          </div>
+          <div class="menu-title white-text">
+            <a>Friends</a>
+          </div>
+        </div>
+        <div [routerLink]="'/home'">
+          <div>
+            <img width="20" height="20" src="../../../assets/img/home_white.png">
+          </div>
+          <div class="menu-title white-text">
+            <a>Events</a>
+          </div>
+        </div>
+        <div [routerLink]="'/home'">
+          <div>
+            <img width="20" height="20" src="../../../assets/img/home_white.png">
+          </div>
+          <div class="menu-title white-text">
+            <a>Chat</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span>Log Off</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!--Body of the Web Page-->
+<div class="container">
+  <div class="main-content">
+    <!--Left Column-->
+    <div class="col-md-3">
+      <mat-card class="vertical-margin">
+        Personal Info
+        <div>
+          <img class="image-contain" src="../../../assets/img/default_user.png"/>
+        </div>
+      </mat-card>
+    </div>
+    <!--Middle Column-->
+    <div class="col-md-7">
+      <!--Post Card-->
+      <div>
+        <mat-card class="vertical-margin border-top">
+          <div>
+            <mat-form-field class="textarea">
+                <textarea matInput
+                          cdkTextareaAutosize
+                          #autosize="cdkTextareaAutosize"
+                          cdkAutosizeMinRows="3"
+                          cdkAutosizeMaxRows="7"></textarea>
+
+            </mat-form-field>
+          </div>
+          <div>
+            <button mat-raised-button class="background-primary white-text">Post</button>
+          </div>
+        </mat-card>
+      </div>
+      <!--Wall Card-->
+      <div>
+        <mat-card class="vertical-margin">
+          This is my wall here I can see what my friends are doing
+        </mat-card>
+      </div>
+    </div>
+    <!--Right Column-->
+    <div class="col-md-3">
+      <mat-card class="vertical-margin">
+        <div class="vertical-margin">
+          FRIENDS
+        </div>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item>
+            friend 1
+          </mat-list-item>
+          <mat-list-item>
+            friend 2
+          </mat-list-item>
+          <mat-list-item>
+            friend 3
+          </mat-list-item>
+          <mat-list-item>
+            friend 4
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+  </div>
+</div>
