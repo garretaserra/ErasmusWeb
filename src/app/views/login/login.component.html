@@ -1,14 +1,26 @@
-<div class="container">
-  <div class="row row-center">
+<mat-toolbar color = "primary">
+  <span>Gattusmus</span>
+  <div class="container">
+    <div class="row row-center">
+    </div>
   </div>
-  <div class="row row-center">
+</mat-toolbar>
+<div class="row">
+  <div class="col-sm-4" >
+    <mat-card-title>
+      Welcome
+    </mat-card-title>
+
+  </div>
+
+<div class="row row-center">
     <div class="main-div">
+      <div class="col-12">
       <mat-card>
         <mat-card-title>
           Log in!
         </mat-card-title>
-        <form [formGroup]="loginForm"
-              class="example-form">
+        <form [formGroup]="loginForm" class="example-form">
           <div>
             <mat-form-field class="example-full-width">
               <input matInput
@@ -53,8 +65,12 @@
                   (click)="login()">
             Log in!
           </button>
+
         </form>
+
       </mat-card>
+      </div>
     </div>
   </div>
-</div>
+
+
