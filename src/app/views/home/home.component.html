@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row class="background-primary">
-    <span>Erasmus</span>
-      <form [formGroup]="form" class="search-form">
+    <span class="margin-left-auto">Erasmus</span>
+      <form [formGroup]="form" class="search-form margin-right-auto">
         <div>
             <label class="search-input">
               <input matInput placeholder="Search...">
@@ -11,8 +11,7 @@
             </button>
         </div>
       </form>
-    <span class="fill-remaining-space"></span>
-    <div class="toolbar-container">
+    <div class="toolbar-container margin-right-auto">
       <div class="toolbar-buttons">
         <div [routerLink]="'/home'">
           <div>
@@ -48,7 +47,7 @@
         </div>
       </div>
     </div>
-    <span>Log Off</span>
+    <span class="margin-right-auto">Log Off</span>
   </mat-toolbar-row>
 </mat-toolbar>
 
@@ -56,11 +55,32 @@
 <div class="container">
   <div class="main-content">
     <!--Left Column-->
-    <div class="col-md-3">
-      <mat-card class="vertical-margin">
-        Personal Info
-        <div>
-          <img class="image-contain" src="../../../assets/img/default_user.png"/>
+    <div class="col-md-3 col-sm-3">
+      <mat-card class="vertical-margin no-padding">
+        <div style="height: 250px">
+          <div style="background: #e44d3a; height: 50%">
+            <div class="personal-icon">
+              <img class="image-contain" src="../../../assets/img/default_user.png"/>
+            </div>
+          </div>
+          <div style="height: 70%">
+            <div class="personal-info-container">
+              <div class="personal-name">
+                Name
+              </div>
+              <div class="personal-status">
+                Status
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="personal-item">
+          <p class="personal-item-title">Following</p>
+          25
+        </div>
+        <div class="personal-item">
+          <p class="personal-item-title">Followers</p>
+          35
         </div>
       </mat-card>
     </div>
@@ -100,17 +120,35 @@
         <mat-divider></mat-divider>
         <mat-list>
           <mat-list-item>
+            <div>
+              friend 1
+            </div>
+            <div class="chat chat-unavailable">
+              <i class="material-icons">chat</i>
+            </div>
+          </mat-list-item>
+          <mat-list-item>
+            <div>
+              friend 1
+            </div>
+            <div class="chat ">
+              <i class="material-icons">chat</i>
+            </div>
+          </mat-list-item><mat-list-item>
+          <div>
             friend 1
-          </mat-list-item>
-          <mat-list-item>
-            friend 2
-          </mat-list-item>
-          <mat-list-item>
-            friend 3
-          </mat-list-item>
-          <mat-list-item>
-            friend 4
-          </mat-list-item>
+          </div>
+          <div class="chat chat-unavailable">
+            <i class="material-icons">chat</i>
+          </div>
+        </mat-list-item><mat-list-item>
+          <div>
+            friend 1
+          </div>
+          <div class="chat ">
+            <i class="material-icons">chat</i>
+          </div>
+        </mat-list-item>
         </mat-list>
       </mat-card>
     </div>

@@ -1,6 +1,8 @@
-.fill-remaining-space {
-  /*This fills the remaining space, by using flexbox.*/
-  flex: 1 1 auto;
+.margin-right-auto{
+  margin-right: auto;
+}
+.margin-left-auto{
+  margin-left: auto;
 }
 
 .background-primary{
@@ -69,9 +71,10 @@
 }
 
 .image-contain{
+  border: 5px solid white;
   object-fit: contain;
-  height: 100%;
   width: 100%;
+  border-radius: 50%;
 }
 
 .vertical-margin{
@@ -89,4 +92,46 @@
 
 .textarea{
   width: 100%;
+}
+
+.chat{
+  margin-left: auto;
+}
+
+.chat-unavailable{
+  color: red;
+}
+
+.personal-icon{
+  height: 120px;
+  width: 120px;
+  margin: 0 auto;
+  padding-top: 64px;
+}
+
+.no-padding{
+  padding: 0;
+}
+
+.personal-item{
+  padding: 15px 0;
+  border-top: 1px solid #f2f2f2;
+}
+
+.personal-item-title{
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: #686868;
+}
+.personal-info-container{
+  margin-top: 22%;
+}
+.personal-name{
+  font-size: 24px;
+  margin: 65px 5px 5px;
+}
+.personal-status{
+  color: #686868;
+  margin: 5px;
 }
