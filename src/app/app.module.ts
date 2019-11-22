@@ -15,11 +15,14 @@ import {MatDividerModule} from "@angular/material/divider";
 import {MDCTextField} from '@material/textfield';
 import {MatButtonModule} from "@angular/material/button";
 import {MatListModule} from "@angular/material/list";
+import { RegisterComponent } from './views/register/register.component';
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import {MatListModule} from "@angular/material/list";
     MatDividerModule,
     MatButtonModule,
     MatListModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

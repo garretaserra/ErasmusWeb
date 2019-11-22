@@ -6,20 +6,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import {Observable, pipe} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-
-@NgModule({
-  imports: [
-    BrowserModule,
-    // Include it under 'imports' in your application module
-    // after BrowserModule.
-    HttpClientModule,
-  ],
-})
-
-@Injectable()
-export class ConfigService {
-  constructor(private http: HttpClient) { }
-}
+import {AuthenticationService} from '../../services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -27,6 +14,8 @@ export class ConfigService {
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+
   user: {
     email: string;
     password: string;
@@ -52,7 +41,8 @@ export class LoginComponent implements OnInit {
   private http: any;
 
   constructor(public formBuilder: FormBuilder,
-              public router: Router,) {
+              public router: Router,
+              private authentication: AuthenticationService) {
     this.loginForm = formBuilder.group({
       email: ['',  Validators.compose([
         Validators.required,
@@ -70,38 +60,6 @@ export class LoginComponent implements OnInit {
   }
 
   async login() {
-    console.log(this.user);
-
-    const body = '{\n' +
-      '\t"email":"carlogc46@gmail.com",\n' +
-      '\t"password":"1234"\n' +
-      '}';
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        Authorization: 'my-auth-token'
-      })
-    };
-
-    console.log(body);
-
-    const res = this.http.post('localhost:3000/user/login', body, httpOptions);
-
-    // New branch created
+    await this.authentication.loginUser(this.user.email, this.user.password).toPromise();
   }
-    /*const headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
-    this.http
-      .post('localhost:3000/test',
-          body, {
-            headers
-          })
-        .subscribe(data => {
-          alert('ok');
-        }, error => {
-          console.log(JSON.stringify(error.json()));
-        });
-     */
 }
