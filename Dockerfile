@@ -9,7 +9,7 @@ COPY package.json .
 RUN npm install
 RUN npm install -g @angular/cli
 
-COPY src/app/views/home /usr/src/app
+COPY . /usr/src/app
 
 EXPOSE 80
 
