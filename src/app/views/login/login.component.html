@@ -1,86 +1,88 @@
 <mat-toolbar color = "primary">
   <span>Gattusmus</span>
   <div class="container">
-    <div class="row row-center">
-    </div>
+    <div class="row row-center"></div>
   </div>
 </mat-toolbar>
 <div class="row">
-  <div class="col-sm-4" >
-    <mat-card-title>
-      Welcome
-    </mat-card-title>
-    <h6>Gattusmus es una plataforma en la que no solo te será útil para conocer a gente nueva sino que
-    te ayudará a vivir una de las mejores experiencias de tu vida mucho más sencilla y cómoda.
-    Si estás planteándote realizar estudios fuera de tu país, no lo dudes y hazlo de la mano de Gattusmus! </h6>
-
-  </div>
-
-<div class="row row-center">
-    <div class="main-div">
-      <div class="col-12">
+  <div class="col-sm-2" >  </div>
+    <div style="padding: 0" class="col-sm-8 mat-card-container"  >
       <mat-card>
+        <div style="padding:0" class="row">
+        <div class="left-column">
+
+          <mat-card-title>
+            Welcome
+          </mat-card-title>
+          <h6>Gattusmus es una plataforma en la que no solo te será útil para conocer a gente nueva sino que
+          te ayudará a vivir una de las mejores experiencias de tu vida mucho más sencilla y cómoda.
+          Si estás planteándote realizar estudios fuera de tu país, no lo dudes y hazlo de la mano de Gattusmus!
+          </h6>
+        </div>
+
+
+        <div class="right-column">
+
         <mat-card-title>
           Log in!
         </mat-card-title>
-        <form [formGroup]="loginForm" class="example-form">
-          <div>
-            <mat-form-field class="example-full-width">
-              <input matInput
-                     formControlName="email"
-                     [(ngModel)]="user.email"
-                     placeholder="Email">
-            </mat-form-field>
-          </div>
-          <div padding-start
-               class="validation-errors">
-            <ng-container *ngFor="let validation of validation_messages.email">
-              <div class="error-message"
-                   *ngIf="loginForm.get('email').hasError(validation.type)
-             && (loginForm.get('email').dirty
-             || loginForm.get('email').touched)">
-                {{ validation.message }}
-              </div>
-            </ng-container>
-          </div>
-          <div>
-            <mat-form-field class="example-full-width">
-              <input matInput
-                     type="password"
-                     [(ngModel)]="user.password"
-                     formControlName="password"
-                     placeholder="Password">
-            </mat-form-field>
-          </div>
-          <div padding-start
-               class="validation-errors">
-            <ng-container *ngFor="let validation of validation_messages.password">
-              <div class="error-message"
-                   *ngIf="loginForm.get('password').hasError(validation.type)
-             && (loginForm.get('password').dirty
-             || loginForm.get('password').touched)">
-                {{ validation.message }}
-              </div>
-            </ng-container>
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="">Remember me</label>
-          </div>
-          <div class="container">
-            <button type="button" class="btn btn-link">Did you forget the password?</button>
-          </div>
-
-          <button mat-raised-button
-                  color="warn"
-                  (click)="login()">
-            Log in!
-          </button>
-
-        </form>
-
+          <form [formGroup]="loginForm" class="example-form">
+            <div>
+              <mat-form-field class="example-full-width">
+                <input matInput
+                       formControlName="email"
+                       [(ngModel)]="user.email"
+                       placeholder="Email">
+              </mat-form-field>
+            </div>
+            <div padding-start class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.email">
+                <div class="error-message"
+                     *ngIf="loginForm.get('email').hasError(validation.type)
+                      && (loginForm.get('email').dirty
+                      || loginForm.get('email').touched)">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+            <div>
+              <mat-form-field class="example-full-width">
+                <input matInput
+                       type="password"
+                       [(ngModel)]="user.password"
+                       formControlName="password"
+                       placeholder="Password">
+              </mat-form-field>
+            </div>
+            <div padding-start
+                 class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.password">
+                <div class="error-message"
+                     *ngIf="loginForm.get('password').hasError(validation.type)
+                      && (loginForm.get('password').dirty
+                      || loginForm.get('password').touched)">
+                      {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="">Remember me</label>
+            </div>
+            <div class="">
+              <button type="button" style="margin: 10px 0" class="btn btn-link">Did you forget the password?</button>
+            </div>
+            <button mat-raised-button
+                    color="warn"
+                    routerLink="/home" routerLinkActive="active">
+              Log in!
+            </button>
+          </form>
+        </div>
+        </div>
       </mat-card>
-      </div>
     </div>
-  </div>
+    <div class="col-sm-2" >  </div>
+</div>
+
 
 
