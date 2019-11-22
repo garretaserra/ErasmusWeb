@@ -1,5 +1,6 @@
 import {Component, NgModule, OnInit} from '@angular/core';
 import {Form, FormGroup} from "@angular/forms";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-home',
@@ -8,11 +9,12 @@ import {Form, FormGroup} from "@angular/forms";
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   form: Form;
 
   ngOnInit() {
+    console.log(environment.apiUri);
   }
-
 }
