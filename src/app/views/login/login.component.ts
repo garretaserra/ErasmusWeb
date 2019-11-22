@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
   private http: any;
 
   constructor(public formBuilder: FormBuilder,
-              public router: Router, ) {
+              public router: Router,) {
     this.loginForm = formBuilder.group({
       email: ['',  Validators.compose([
         Validators.required,
