@@ -12,7 +12,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient) {
   }
 
-  registerUser(username, password){
+  registerUser(username,surname,email,password){
     return this.http.post(this.url+'/subject/addNew',{subject:{name: username},student:{name: password}});
   }
 

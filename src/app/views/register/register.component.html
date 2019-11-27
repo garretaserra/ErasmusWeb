@@ -1,10 +1,22 @@
 <mat-toolbar color = "primary">
-  <span>Set up!</span>
+  <span>Gattusmus</span>
   <div class="container">
     <div class="row row-center"></div>
   </div>
+
 </mat-toolbar>
-<table class="example-full-width" cellspacing="0"><tr>
+
+<div class="row">
+  <div class="col-sm-2" >
+  </div>
+  <div style="padding: 0" class="col-sm-8 mat-card-container"  >
+
+    <mat-card class ="col-sm-6">
+
+      <mat-card-title>
+        Create your account!
+      </mat-card-title>
+      <table class="example-full-width" cellspacing="0"><tr>
   <td><mat-form-field >
     <input matInput placeholder="First name">
   </mat-form-field></td>
@@ -13,11 +25,26 @@
   </mat-form-field></td>
 </tr></table>
 <mat-form-field >
-  <textarea matInput placeholder="email"></textarea>
+  <textarea matInput placeholder="email" [formControl]="email" required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </textarea>
 </mat-form-field>
 <table ><tr>
   <td><mat-form-field >
     <input matInput placeholder="password">
   </mat-form-field></td>
-  <
 </tr></table>
+        <div >
+          <button mat-flat-button color="primary" routerLink="/home"(click)="register()">
+            Set up
+          </button>
+          <div class="col-sm-2" >  </div>
+        </div>
+
+      </mat-card>
+  </div>
+  </div>
+
+
+
+
