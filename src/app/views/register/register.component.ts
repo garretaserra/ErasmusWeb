@@ -11,15 +11,13 @@ import {AuthenticationService} from '../../services/authentication.service';
 })
 export class RegisterComponent implements OnInit {
   user: {
-    name: string;
-    surname: string;
-    email: string;
-    password: string;
-  } = {
-    email: '',
-    password: ''
+  email: string;
+  password: string;
+} = {
+  email: '',
+  password: ''
 
-  };
+};
   public registerForm: FormGroup;
 
   validation_messages = {

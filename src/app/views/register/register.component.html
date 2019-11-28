@@ -1,7 +1,10 @@
 <mat-toolbar color = "primary">
   <span>Gattusmus</span>
   <div class="container">
-    <div class="row row-center"></div>
+    <div class="row row-center">
+      <button mat-stroked-button color="primary">Primary</button>
+    </div>
+
   </div>
 
 </mat-toolbar>
@@ -25,8 +28,8 @@
   </mat-form-field></td>
 </tr></table>
 <mat-form-field >
-  <textarea matInput placeholder="email" [formControl]="email" required>
-    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  <textarea matInput placeholder="email" >
+
   </textarea>
 </mat-form-field>
 <table ><tr>
