@@ -13,4 +13,4 @@ COPY . /usr/src/app
 
 EXPOSE 80
 
-CMD ng serve --configuration=production --host 0.0.0.0
+CMD ng serve --port 80 --configuration=production --host 0.0.0.0
