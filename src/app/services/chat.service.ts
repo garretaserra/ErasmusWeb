@@ -5,6 +5,11 @@ export class ChatService {
   private socket;
 
   constructor() {
-    this.socket = io(this.url);
+    this.socket = io(this.url, {query: 'name=izanpc'});
+    // TODO: Get username logged session
+  }
+
+  public sendMessage(message) {
+    this.socket.emit('message', message);
   }
 }

@@ -1,5 +1,5 @@
-
-<p id="status">Status: Connecting...</p>
-<i class="material-icons">
-  chat
-</i>
+<input matInput
+       type="text"
+       [(ngModel)]="message"
+       placeholder="Message">
+<button (click)="sendMessage()">Send</button>

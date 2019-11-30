@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './views/login/login.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material";
@@ -41,6 +41,7 @@ import { ChatService } from './services/chat.service';
     MatButtonModule,
     MatListModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [ChatService],
   bootstrap: [AppComponent]
