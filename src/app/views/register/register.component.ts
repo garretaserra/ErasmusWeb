@@ -25,10 +25,10 @@ export class RegisterComponent implements OnInit {
       {type: 'required',message:'Name is required.'},
       {type:'pattern',message:'Name is not valid.'}
       ],
-    surname:[
-      {type:'required',message:'Surname is required.'},
-      {type:'pattern',message:'Surname is not valid.'}
-    ],
+    // surname:[
+    //   {type:'required',message:'Surname is required.'},
+    //   {type:'pattern',message:'Surname is not valid.'}
+    // ],
     email: [
       { type: 'required', message: 'Email is required.' },
       { type: 'pattern', message: 'Email is not valid.' }
