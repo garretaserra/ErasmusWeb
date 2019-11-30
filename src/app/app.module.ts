@@ -18,6 +18,8 @@ import {MatListModule} from "@angular/material/list";
 import { RegisterComponent } from './views/register/register.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ChatwidgetComponent } from './views/chatwidget/chatwidget.component';
+import { ChatService } from './services/chat.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,7 @@ import { ChatwidgetComponent } from './views/chatwidget/chatwidget.component';
     MatListModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
