@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
   async register(){
-    await this.authentication.registerUser(this.user.name,this.user.surname,this.user.email,this.user.password).toPromise();
+    //await this.authentication.registerUser(this.user.name,this.user.surname,this.user.email,this.user.password).toPromise();
   }
 
 
