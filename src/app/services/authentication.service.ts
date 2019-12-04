@@ -1,6 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { environment} from "../../environments/environment";
+
+let httpOptions = {
+  headers: new HttpHeaders(
+    {
+      'Content-Type': 'application/json',
+    }
+  )
+};
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +16,7 @@ import { environment} from "../../environments/environment";
 export class AuthenticationService {
 
   url = environment.apiUri;
+  token = sessionStorage.getItem('token');
 
   constructor(private http: HttpClient) {
   }
@@ -18,5 +27,12 @@ export class AuthenticationService {
 
   loginUser(email, password){
     return this.http.post<any>(this.url+'/api/user/login',{email: email, password: password});
+  }
+
+  //Example of request with authorization
+  getUser(){
+    httpOptions.headers = httpOptions.headers.delete("Authorization");
+    httpOptions.headers = httpOptions.headers.append("Authorization", 'Token ' + this.token);
+    return this.http.get(this.url+'/api/user/user', httpOptions);
   }
 }

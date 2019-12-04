@@ -1,6 +1,7 @@
 import {Component, NgModule, OnInit} from '@angular/core';
 import {Form, FormGroup} from "@angular/forms";
-import {environment} from "../../../environments/environment";
+import {User} from "../../models/user";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -9,17 +10,18 @@ import {environment} from "../../../environments/environment";
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
-  form: Form;
+  form: FormGroup = new FormGroup({});
+  user: User;
 
-  ngOnInit() {
-    console.log(environment.apiUri);
+  async ngOnInit() {
+    this.user = JSON.parse(sessionStorage.getItem('user'));
   }
 
   logOff(){
     sessionStorage.clear();
-    window.location.reload();
+    this.router.navigateByUrl('/login');
   }
 }

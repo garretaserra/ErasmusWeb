@@ -4,6 +4,7 @@ export class User {
   surname: String;
   email: String;
   password: String;
-
+  follows: [];
+  following: [];
 }
 

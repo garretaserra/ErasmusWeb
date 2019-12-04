@@ -13,7 +13,7 @@
       </form>
     <div class="toolbar-container margin-right-auto">
       <div class="toolbar-buttons">
-        <div [routerLink]="'/home'">
+        <div class="pointer" [routerLink]="'/home'">
           <div>
             <img width="20" height="20" src="../../../assets/img/home_white.png">
           </div>
@@ -21,7 +21,7 @@
             <a>Home</a>
           </div>
         </div>
-        <div [routerLink]="'/home'">
+        <div class="pointer" [routerLink]="'/home'">
           <div>
             <img width="20" height="20" src="../../../assets/img/home_white.png">
           </div>
@@ -29,7 +29,7 @@
             <a>Friends</a>
           </div>
         </div>
-        <div [routerLink]="'/home'">
+        <div class="pointer" [routerLink]="'/home'">
           <div>
             <img width="20" height="20" src="../../../assets/img/home_white.png">
           </div>
@@ -37,7 +37,7 @@
             <a>Events</a>
           </div>
         </div>
-        <div [routerLink]="'/home'">
+        <div class="pointer" [routerLink]="'/home'">
           <div>
             <img width="20" height="20" src="../../../assets/img/home_white.png">
           </div>
@@ -66,7 +66,7 @@
           <div style="height: 70%">
             <div class="personal-info-container">
               <div class="personal-name">
-                Name
+                {{user.name}}
               </div>
               <div class="personal-status">
                 Status
@@ -75,12 +75,12 @@
           </div>
         </div>
         <div class="personal-item">
-          <p class="personal-item-title">Following</p>
-          25
+          <p class="personal-item-title">Followers</p>
+          {{user.follows.length}}
         </div>
         <div class="personal-item">
-          <p class="personal-item-title">Followers</p>
-          35
+          <p class="personal-item-title">Following</p>
+          {{user.following.length}}
         </div>
       </mat-card>
     </div>
