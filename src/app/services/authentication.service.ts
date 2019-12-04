@@ -12,11 +12,11 @@ export class AuthenticationService {
   constructor(private http: HttpClient) {
   }
 
-  registerUser(username,surname,email,password){
-    return this.http.post(this.url+'/subject/addNew',{subject:{name: username},student:{name: password}});
+  registerUser(email, password){
+    return this.http.post(this.url+'/user/register',{email: email, password: password});
   }
 
-  loginUser(username, password){
-    return this.http.post(this.url+'/subject/addNew',{subject:{name: username},student:{name: password}});
+  loginUser(email, password){
+    return this.http.post<any>(this.url+'/api/user/login',{email: email, password: password});
   }
 }

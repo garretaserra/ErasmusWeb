@@ -17,4 +17,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     console.log(environment.apiUri);
   }
+
+  logOff(){
+    sessionStorage.clear();
+    window.location.reload();
+  }
 }
