@@ -60,6 +60,14 @@ export class LoginComponent implements OnInit {
   }
 
   async login() {
-    await this.authentication.loginUser(this.user.email, this.user.password).toPromise();
+    let response = await this.authentication.loginUser(this.user.email, this.user.password).toPromise();
+    if(response){
+      //Clear session storage and store token and User object
+      sessionStorage.clear();
+      sessionStorage.setItem('token', response.jwt);
+      sessionStorage.setItem('user', JSON.stringify(response.user));
+      //Refresh page to automatically go to home
+      window.location.reload();
+    }
   }
 }

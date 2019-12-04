@@ -1,1 +1,3 @@
-<router-outlet></router-outlet>
+<!--If there is no token-->
+<app-login *ngIf="!token"></app-login>
+<router-outlet *ngIf="token"></router-outlet>
