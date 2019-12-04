@@ -26,13 +26,13 @@ export class AuthenticationService {
   }
 
   loginUser(email, password){
-    return this.http.post<any>(this.url+'/api/user/login',{email: email, password: password});
+    return this.http.post<any>(this.url+'/user/login',{email: email, password: password});
   }
 
   //Example of request with authorization
   getUser(){
     httpOptions.headers = httpOptions.headers.delete("Authorization");
     httpOptions.headers = httpOptions.headers.append("Authorization", 'Token ' + this.token);
-    return this.http.get(this.url+'/api/user/user', httpOptions);
+    return this.http.get(this.url+'/user/user', httpOptions);
   }
 }
