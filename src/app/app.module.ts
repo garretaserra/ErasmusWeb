@@ -16,7 +16,8 @@ import {MDCTextField} from '@material/textfield';
 import {MatButtonModule} from "@angular/material/button";
 import {MatListModule} from "@angular/material/list";
 import { RegisterComponent } from './views/register/register.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {AuthInterceptorService} from "./services/auth-interceptor.service";
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,11 @@ import {HttpClientModule} from '@angular/common/http';
     MatListModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

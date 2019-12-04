@@ -31,8 +31,6 @@ export class AuthenticationService {
 
   //Example of request with authorization
   getUser(){
-    httpOptions.headers = httpOptions.headers.delete("Authorization");
-    httpOptions.headers = httpOptions.headers.append("Authorization", 'Token ' + this.token);
-    return this.http.get(this.url+'/user/user', httpOptions);
+    return this.http.get(this.url+'/user/user');
   }
 }
