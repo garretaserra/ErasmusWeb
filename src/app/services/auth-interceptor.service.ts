@@ -26,7 +26,9 @@ export class AuthInterceptorService implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((err: HttpErrorResponse) => {
         if (err.status === 401) {
+          sessionStorage.clear();
           this.router.navigateByUrl('/login');
+          //TODO: Add toast message informing the user that the session has expired
         }
         return throwError( err );
       })
