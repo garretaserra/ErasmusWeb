@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { environment} from "../../environments/environment";
+import {User} from "../models/user";
 
 let httpOptions = {
   headers: new HttpHeaders(
@@ -32,5 +33,9 @@ export class AuthenticationService {
   //Example of request with authorization
   getUser(){
     return this.http.get(this.url+'/user/user');
+  }
+
+  search(searchString){
+    return this.http.get<User[]>(this.url + '/user/search?searchString='+searchString);
   }
 }

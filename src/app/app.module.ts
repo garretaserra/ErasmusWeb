@@ -18,6 +18,7 @@ import {MatListModule} from "@angular/material/list";
 import { RegisterComponent } from './views/register/register.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {AuthInterceptorService} from "./services/auth-interceptor.service";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import {AuthInterceptorService} from "./services/auth-interceptor.service";
     MatButtonModule,
     MatListModule,
     HttpClientModule,
+    MatAutocompleteModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

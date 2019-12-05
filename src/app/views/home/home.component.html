@@ -4,7 +4,10 @@
       <form [formGroup]="form" class="search-form margin-right-auto">
         <div>
             <label class="search-input">
-              <input matInput placeholder="Search...">
+              <input matInput (keyup)="updateSuggestions($event)" [matAutocomplete]="auto" placeholder="Search...">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let suggestion of suggestions" [value]="suggestion">{{suggestion}}</mat-option>
+              </mat-autocomplete>
             </label>
             <button type="submit" class="search-button">
               <i class="material-icons search-icon">search</i>
