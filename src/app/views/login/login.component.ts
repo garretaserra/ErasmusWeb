@@ -1,11 +1,6 @@
 import {Component, Injectable, NgModule, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {BrowserModule} from '@angular/platform-browser';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
-import {Observable, pipe} from 'rxjs';
-import {catchError} from 'rxjs/operators';
 import {AuthenticationService} from '../../services/authentication.service';
 
 @Component({
@@ -41,7 +36,7 @@ export class LoginComponent implements OnInit {
   private http: any;
 
   constructor(public formBuilder: FormBuilder,
-              public router: Router,
+              private router: Router,
               private authentication: AuthenticationService) {
     this.loginForm = formBuilder.group({
       email: ['',  Validators.compose([
@@ -60,6 +55,13 @@ export class LoginComponent implements OnInit {
   }
 
   async login() {
-    await this.authentication.loginUser(this.user.email, this.user.password).toPromise();
+    let response = await this.authentication.loginUser(this.user.email, this.user.password).toPromise();
+    if(response){
+      //Clear session storage and store token and User object
+      sessionStorage.clear();
+      sessionStorage.setItem('token', response.jwt);
+      sessionStorage.setItem('user', JSON.stringify(response.user));
+      this.router.navigateByUrl('/home');
+    }
   }
 }

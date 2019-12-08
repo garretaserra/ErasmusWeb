@@ -1,6 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { environment} from "../../environments/environment";
+import {User} from "../models/user";
+
+let httpOptions = {
+  headers: new HttpHeaders(
+    {
+      'Content-Type': 'application/json',
+    }
+  )
+};
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +17,25 @@ import { environment} from "../../environments/environment";
 export class AuthenticationService {
 
   url = environment.apiUri;
+  token = sessionStorage.getItem('token');
 
   constructor(private http: HttpClient) {
   }
 
-  registerUser(username,surname,email,password){
-    return this.http.post(this.url+'/subject/addNew',{subject:{name: username},student:{name: password}});
+  registerUser(email, password){
+    return this.http.post(this.url+'/user/register',{email: email, password: password});
   }
 
-  loginUser(username, password){
-    return this.http.post(this.url+'/subject/addNew',{subject:{name: username},student:{name: password}});
+  loginUser(email, password){
+    return this.http.post<any>(this.url+'/user/login',{email: email, password: password});
+  }
+
+  //Example of request with authorization
+  getUser(){
+    return this.http.get(this.url+'/user/user');
+  }
+
+  search(searchString){
+    return this.http.get<User[]>(this.url + '/user/search?searchString='+searchString);
   }
 }

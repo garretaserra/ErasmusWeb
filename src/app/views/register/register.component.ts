@@ -18,14 +18,14 @@ export class RegisterComponent implements OnInit {
   };
   public registerForm: FormGroup;
 
-  validation_messages = {
-    name:[
-      {type: 'required',message:'Name is required.'},
-      {type:'pattern',message:'Name is not valid.'}
+  validationMessages = {
+    name: [
+      {type: 'required', message: 'Name is required.'},
+      {type: 'pattern', message: 'Name is not valid.'}
       ],
-    surname:[
-       {type:'required',message:'Surname is required.'},
-       {type:'pattern',message:'Surname is not valid.'}
+    surname: [
+       {type: 'required', message: 'Surname is required.'},
+       {type: 'pattern', message: 'Surname is not valid.'}
      ],
     email: [
       { type: 'required', message: 'Email is required.' },
@@ -57,8 +57,8 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
   }
-  async register(){
-    await this.authentication.registerUser(this.user.name, this.user.surname, this.user.email, this.user.password).toPromise();
+  async register() {
+    // await this.authentication.registerUser(this.user.name,this.user.surname,this.user.email,this.user.password).toPromise();
   }
 
 

@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ErasmusWeb';
+  token: boolean = false;
+
+  ngOnInit() {
+    let token = sessionStorage.getItem('token');
+    this.token = !!token;
+  }
 }

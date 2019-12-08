@@ -4,7 +4,10 @@
       <form [formGroup]="form" class="search-form margin-right-auto">
         <div>
             <label class="search-input">
-              <input matInput placeholder="Search...">
+              <input matInput (keyup)="updateSuggestions($event)" [matAutocomplete]="auto" placeholder="Search...">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let suggestion of suggestions" [value]="suggestion">{{suggestion}}</mat-option>
+              </mat-autocomplete>
             </label>
             <button type="submit" class="search-button">
               <i class="material-icons search-icon">search</i>
@@ -13,7 +16,7 @@
       </form>
     <div class="toolbar-container margin-right-auto">
       <div class="toolbar-buttons">
-        <div [routerLink]="'/home'">
+        <div class="pointer" [routerLink]="'/home'">
           <div>
             <img width="20" height="20" src="../../../assets/img/home_white.png">
           </div>
@@ -21,7 +24,7 @@
             <a>Home</a>
           </div>
         </div>
-        <div [routerLink]="'/home'">
+        <div class="pointer" [routerLink]="'/home'">
           <div>
             <img width="20" height="20" src="../../../assets/img/home_white.png">
           </div>
@@ -29,7 +32,7 @@
             <a>Friends</a>
           </div>
         </div>
-        <div [routerLink]="'/home'">
+        <div class="pointer" [routerLink]="'/home'">
           <div>
             <img width="20" height="20" src="../../../assets/img/home_white.png">
           </div>
@@ -37,7 +40,7 @@
             <a>Events</a>
           </div>
         </div>
-        <div [routerLink]="'/home'">
+        <div class="pointer" [routerLink]="'/home'">
           <div>
             <img width="20" height="20" src="../../../assets/img/home_white.png">
           </div>
@@ -47,7 +50,7 @@
         </div>
       </div>
     </div>
-    <div routerLink="/login" class="margin-right-auto">Log Off</div>
+    <div routerLink="/login" class="pointer margin-right-auto" (click)="logOff()">Log Off</div>
   </mat-toolbar-row>
 </mat-toolbar>
 
@@ -66,7 +69,7 @@
           <div style="height: 70%">
             <div class="personal-info-container">
               <div class="personal-name">
-                Name
+                {{user.name}}
               </div>
               <div class="personal-status">
                 Status
@@ -75,12 +78,12 @@
           </div>
         </div>
         <div class="personal-item">
-          <p class="personal-item-title">Following</p>
-          25
+          <p class="personal-item-title">Followers</p>
+          {{user.follows.length}}
         </div>
         <div class="personal-item">
-          <p class="personal-item-title">Followers</p>
-          35
+          <p class="personal-item-title">Following</p>
+          {{user.following.length}}
         </div>
       </mat-card>
     </div>
