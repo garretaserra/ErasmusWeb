@@ -4,12 +4,13 @@ export class ChatService {
   private url = 'http://localhost:3000';
   private socket;
 
-  constructor() {
-    this.socket = io(this.url, {query: 'name=izanpc'});
-    // TODO: Get username logged session
+  constructor() { }
+
+  public connectSocket(email: string) {
+    this.socket = io(this.url, {query: 'email=' + email});
   }
 
-  public sendMessage(message) {
-    this.socket.emit('message', message);
+  public sendMessage(message, destination) {
+    this.socket.emit('message', { message, destination});
   }
 }

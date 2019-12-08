@@ -1,9 +1,9 @@
 'use strict';
 export class User {
-  name: String;
-  surname: String;
-  email: String;
-  password: String;
+  name: string;
+  surname: string;
+  email: string;
+  password: string;
   follows: [];
   following: [];
 }

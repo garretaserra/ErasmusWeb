@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ChatService} from '../../services/chat.service';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'app-chatwidget',
@@ -9,15 +10,23 @@ import {ChatService} from '../../services/chat.service';
 export class ChatwidgetComponent implements OnInit {
 
   message: string;
+  user: User;
 
   constructor(private chatService: ChatService) { }
 
   ngOnInit() {
+    this.user = JSON.parse(sessionStorage.getItem('user'));
+    console.log(this.user.email);
+    this.chatService.connectSocket(this.user.email);
+  }
+
+  onKey(event: any) {
+    this.message = event.target.value;
   }
 
   sendMessage() {
-    this.chatService.sendMessage(this.message);
-    this.message = '';
+    console.log(this.message);
+    this.chatService.sendMessage(this.message, 'Sheila');
   }
 
 }
