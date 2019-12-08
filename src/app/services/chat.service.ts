@@ -13,4 +13,5 @@ export class ChatService {
   public sendMessage(message, destination) {
     this.socket.emit('message', { message, destination});
   }
+  userList(list) {console.log(list); }
 }

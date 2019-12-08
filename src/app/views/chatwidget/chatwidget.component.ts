@@ -11,6 +11,7 @@ export class ChatwidgetComponent implements OnInit {
 
   message: string;
   user: User;
+  userList: [];
 
   constructor(private chatService: ChatService) { }
 
